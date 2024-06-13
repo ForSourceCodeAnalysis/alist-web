@@ -13,7 +13,7 @@ import {
   Icon,
 } from "@hope-ui/solid"
 import { createMemo, createSignal, Show } from "solid-js"
-import { SwitchColorMode, SwitchLanguageWhite } from "~/components"
+import { Beian, SwitchColorMode, SwitchLanguageWhite } from "~/components"
 import { useFetch, useT, useTitle, useRouter } from "~/hooks"
 import {
   changeToken,
@@ -314,6 +314,7 @@ const Login = () => {
         </Flex>
       </VStack>
       <LoginBg />
+      <Beian />
     </Center>
   )
 }
