@@ -127,6 +127,12 @@ export const side_menu_items: SideMenuItem[] = [
         to: "/@manage/tasks/copy",
         component: lazy(() => import("./tasks/Copy")),
       },
+      {
+        title: "manage.sidemenu.backup",
+        icon: BsCloudUploadFill,
+        to: "/@manage/tasks/backup",
+        component: lazy(() => import("./tasks/Backup")),
+      },
     ],
   },
   {
@@ -134,6 +140,12 @@ export const side_menu_items: SideMenuItem[] = [
     icon: BsPersonCircle,
     to: "/@manage/users",
     component: lazy(() => import("./users/Users")),
+  },
+  {
+    title: "manage.sidemenu.backups",
+    icon: FaSolidDatabase,
+    to: "/@manage/backup",
+    component: lazy(() => import("./backups/Backups")),
   },
   {
     title: "manage.sidemenu.storages",

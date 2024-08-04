@@ -3,6 +3,7 @@
   "offline_download_transfer": "Transfer downloaded file to corresponding storage",
   "upload": "Upload file to corresponding storage",
   "copy": "Copy file from a storage to another storage",
+  "backup": "Auto backup local files to storages",
   "done": "Completed",
   "undone": "Running",
   "clear_succeeded": "Clear Succeeded",

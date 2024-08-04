@@ -1,0 +1,15 @@
+{
+  "src_dir": "Source directory",
+  "dst_dir": "Destination directory",
+  "ignore": "Ignore dir/file",
+  "available": "Available",
+  "init_upload": "Init upload",
+  "mode": "Mode",
+  "disabled": "Disabled",
+  "polling_interval": "Polling interval",
+  "interval_unit": "Unit: minute. Only effect when mode is \"Polling\"",
+  "multi_support_tips": "The storages you want to save to, support multiple item, one per line",
+  "ignore_tips": "The directories or files that you don't want to backup, support .gitignore file syntax",
+  "mode_tips": "Backup mode: polling or event.\nThe Polling mode is suitable for scenarios where the service may not be running when the file changes, or there are few files in the folder that needs to be backed up. \nThe event mode is suitable for scenarios where services run for a long time, and this mode is more efficient.",
+  "init_upload_tips": "If true, after created (not edit), source directory files will be uploaded immediately for the first time. Only effective mode is \"event\"."
+}

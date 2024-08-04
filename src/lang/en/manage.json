@@ -15,6 +15,7 @@
     "tasks": "Tasks",
     "upload": "Upload",
     "copy": "Copy",
+    "backup": "Autobackup",
     "backup-restore": "Backup & Restore",
     "home": "Home",
     "indexes": "Indexes",
@@ -22,7 +23,8 @@
     "docs": "Documentation",
     "offline_download": "Offline Download",
     "ldap": "LDAP",
-    "s3": "S3"
+    "s3": "S3",
+    "backups": "Autobackups"
   },
   "title": "AList Manage",
   "not_admin": "You are not admin user, please login with admin account.",
