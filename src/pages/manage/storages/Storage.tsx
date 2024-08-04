@@ -14,6 +14,7 @@ import { getMainColor, me } from "~/store"
 import { PEmptyResp, Storage } from "~/types"
 import { handleResp, handleRespWithNotifySuccess, notify, r } from "~/utils"
 import { DeletePopover } from "../common/DeletePopover"
+import { Show } from "solid-js"
 
 interface StorageProps {
   storage: Storage
@@ -40,7 +41,7 @@ function StorageOp(props: StorageProps) {
     me().server_id != props.storage.server_id
 
   return (
-    <>
+    <Show when={!disableInServer}>
       <Button
         onClick={() => {
           to(`/@manage/storages/edit/${props.storage.id}`)
@@ -72,7 +73,7 @@ function StorageOp(props: StorageProps) {
           })
         }}
       />
-    </>
+    </Show>
   )
 }
 
