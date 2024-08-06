@@ -133,7 +133,9 @@ const AddOrEdit = () => {
             type="number"
             id="polling_interval"
             value={id != undefined ? backup.polling_interval : 60}
-            onInput={(e) => parseInt(e.currentTarget.value)}
+            onInput={(e) => {
+              setBackup("polling_interval", parseInt(e.currentTarget.value))
+            }}
           />
           <FormHelperText>{t("backup.interval_unit")}</FormHelperText>
         </FormControl>
