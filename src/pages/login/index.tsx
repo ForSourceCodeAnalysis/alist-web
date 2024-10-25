@@ -13,7 +13,7 @@ import {
   Icon,
 } from "@hope-ui/solid"
 import { createMemo, createSignal, Show } from "solid-js"
-import { SwitchColorMode, SwitchLanguageWhite } from "~/components"
+import { Filing, SwitchColorMode, SwitchLanguageWhite } from "~/components"
 import { useFetch, useT, useTitle, useRouter } from "~/hooks"
 import {
   changeToken,
@@ -175,144 +175,151 @@ const Login = () => {
 
   return (
     <Center zIndex="1" w="$full" h="100vh">
-      <VStack
-        bgColor={bgColor()}
-        rounded="$xl"
-        p="24px"
-        w={{
-          "@initial": "90%",
-          "@sm": "364px",
-        }}
-        spacing="$4"
-      >
-        <Flex alignItems="center" justifyContent="space-around">
-          <Image mr="$2" boxSize="$12" src={logo()} />
-          <Heading color="$info9" fontSize="$2xl">
-            {title()}
-          </Heading>
-        </Flex>
-        <Show
-          when={!needOpt()}
-          fallback={
-            <Input
-              id="totp"
-              name="otp"
-              placeholder={t("login.otp-tips")}
-              value={opt()}
-              onInput={(e) => setOpt(e.currentTarget.value)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") {
-                  Login()
-                }
-              }}
-            />
-          }
-        >
-          <Input
-            name="username"
-            placeholder={t("login.username-tips")}
-            value={username()}
-            onInput={(e) => setUsername(e.currentTarget.value)}
-          />
-          <Show when={!useauthn()}>
-            <Input
-              name="password"
-              placeholder={t("login.password-tips")}
-              type="password"
-              value={password()}
-              onInput={(e) => setPassword(e.currentTarget.value)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") {
-                  Login()
-                }
-              }}
-            />
-          </Show>
-          <Flex
-            px="$1"
-            w="$full"
-            fontSize="$sm"
-            color="$neutral10"
-            justifyContent="space-between"
-            alignItems="center"
-          >
-            <Checkbox
-              checked={remember() === "true"}
-              onChange={() =>
-                setRemember(remember() === "true" ? "false" : "true")
-              }
-            >
-              {t("login.remember")}
-            </Checkbox>
-            <Text as="a" target="_blank" href={t("login.forget_url")}>
-              {t("login.forget")}
-            </Text>
-          </Flex>
-        </Show>
-        <HStack w="$full" spacing="$2">
-          <Show when={!useauthn()}>
-            <Button
-              colorScheme="primary"
-              w="$full"
-              onClick={() => {
-                if (needOpt()) {
-                  setOpt("")
-                } else {
-                  setUsername("")
-                  setPassword("")
-                }
-              }}
-            >
-              {t("login.clear")}
-            </Button>
-          </Show>
-          <Button w="$full" loading={loading()} onClick={Login}>
-            {t("login.login")}
-          </Button>
-        </HStack>
-        <Show when={ldapLoginEnabled}>
-          <Checkbox
-            w="$full"
-            checked={useLdap() === true}
-            onChange={() => setUseLdap(!useLdap())}
-          >
-            {ldapLoginTips}
-          </Checkbox>
-        </Show>
-        <Button
-          w="$full"
-          colorScheme="accent"
-          onClick={() => {
-            changeToken()
-            to(
-              decodeURIComponent(searchParams.redirect || base_path || "/"),
-              true,
-            )
+      <Flex flexDirection="column" h="100vh">
+        <VStack
+          bgColor={bgColor()}
+          rounded="$xl"
+          p="24px"
+          w={{
+            "@initial": "90%",
+            "@sm": "364px",
           }}
+          spacing="$4"
+          margin="auto"
         >
-          {t("login.use_guest")}
-        </Button>
-        <Flex
-          mt="$2"
-          justifyContent="space-evenly"
-          alignItems="center"
-          color="$neutral10"
-          w="$full"
-        >
-          <SwitchLanguageWhite />
-          <SwitchColorMode />
-          <SSOLogin />
-          <Show when={AuthnSignEnabled}>
-            <Icon
-              cursor="pointer"
-              boxSize="$8"
-              as={IoFingerPrint}
-              p="$0_5"
-              onclick={AuthnSwitch}
+          <Flex alignItems="center" justifyContent="space-around">
+            <Image mr="$2" boxSize="$12" src={logo()} />
+            <Heading color="$info9" fontSize="$2xl">
+              {title()}
+            </Heading>
+          </Flex>
+          <Show
+            when={!needOpt()}
+            fallback={
+              <Input
+                id="totp"
+                name="otp"
+                placeholder={t("login.otp-tips")}
+                value={opt()}
+                onInput={(e) => setOpt(e.currentTarget.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    Login()
+                  }
+                }}
+              />
+            }
+          >
+            <Input
+              name="username"
+              placeholder={t("login.username-tips")}
+              value={username()}
+              onInput={(e) => setUsername(e.currentTarget.value)}
             />
+            <Show when={!useauthn()}>
+              <Input
+                name="password"
+                placeholder={t("login.password-tips")}
+                type="password"
+                value={password()}
+                onInput={(e) => setPassword(e.currentTarget.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    Login()
+                  }
+                }}
+              />
+            </Show>
+            <Flex
+              px="$1"
+              w="$full"
+              fontSize="$sm"
+              color="$neutral10"
+              justifyContent="space-between"
+              alignItems="center"
+            >
+              <Checkbox
+                checked={remember() === "true"}
+                onChange={() =>
+                  setRemember(remember() === "true" ? "false" : "true")
+                }
+              >
+                {t("login.remember")}
+              </Checkbox>
+              <Text as="a" target="_blank" href={t("login.forget_url")}>
+                {t("login.forget")}
+              </Text>
+            </Flex>
           </Show>
-        </Flex>
-      </VStack>
+          <HStack w="$full" spacing="$2">
+            <Show when={!useauthn()}>
+              <Button
+                colorScheme="primary"
+                w="$full"
+                onClick={() => {
+                  if (needOpt()) {
+                    setOpt("")
+                  } else {
+                    setUsername("")
+                    setPassword("")
+                  }
+                }}
+              >
+                {t("login.clear")}
+              </Button>
+            </Show>
+            <Button w="$full" loading={loading()} onClick={Login}>
+              {t("login.login")}
+            </Button>
+          </HStack>
+          <Show when={ldapLoginEnabled}>
+            <Checkbox
+              w="$full"
+              checked={useLdap() === true}
+              onChange={() => setUseLdap(!useLdap())}
+            >
+              {ldapLoginTips}
+            </Checkbox>
+          </Show>
+          <Button
+            w="$full"
+            colorScheme="accent"
+            onClick={() => {
+              changeToken()
+              to(
+                decodeURIComponent(searchParams.redirect || base_path || "/"),
+                true,
+              )
+            }}
+          >
+            {t("login.use_guest")}
+          </Button>
+          <Flex
+            mt="$2"
+            justifyContent="space-evenly"
+            alignItems="center"
+            color="$neutral10"
+            w="$full"
+          >
+            <SwitchLanguageWhite />
+            <SwitchColorMode />
+            <SSOLogin />
+            <Show when={AuthnSignEnabled}>
+              <Icon
+                cursor="pointer"
+                boxSize="$8"
+                as={IoFingerPrint}
+                p="$0_5"
+                onclick={AuthnSwitch}
+              />
+            </Show>
+          </Flex>
+        </VStack>
+        <VStack marginTop="auto">
+          <Filing />
+        </VStack>
+      </Flex>
+
       <LoginBg />
     </Center>
   )
