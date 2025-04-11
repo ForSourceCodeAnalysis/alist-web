@@ -1,0 +1,19 @@
+{
+  "title": "Auto Backup",
+  "src_dir": "Source directory",
+  "dst_dir": "Destination directory",
+  "ignore": "Ignore dir/file",
+  "available": "Available",
+  "mode": "Mode",
+  "log": "Log",
+  "filename": "Filename",
+  "last_backup": "Last backup",
+  "first_backup": "First backup",
+  "multi_support_tips": "The storages you want to save to, support multiple item, one per line",
+  "ignore_tips": "The directories or files that you don't want to backup, support .gitignore file syntax",
+  "mode_tips": "Backup mode: Cron or Event.\nThe cron mode is suitable for scenarios where the service may not be running when the file changes, or there are few files in the folder that needs to be backed up. \nThe event mode is suitable for scenarios where services run for a long time, and this mode is more efficient.",
+  "init_upload_tips": "If checked, after created this backup task (not edit), source directory files will be uploaded immediately for the first time. Only effective mode is \"event\".",
+  "cron_tips": "Cron expressions, please refer to https://https://crontab.cronhub.io/. You can also let AI help you generate",
+  "cron_invalid_tips": "Cron expression is invalid",
+  "time_consuming": "Time consuming(unit: second)"
+}

@@ -24,6 +24,18 @@ const hide_routes: Route[] = [
     component: lazy(() => import("./users/AddOrEdit")),
   },
   {
+    to: "/backup/add",
+    component: lazy(() => import("./extensions/autobackup/AddOrEdit")),
+  },
+  {
+    to: "/backup/edit/:id",
+    component: lazy(() => import("./extensions/autobackup/AddOrEdit")),
+  },
+  {
+    to: "/backup/last-backup/:id",
+    component: lazy(() => import("./extensions/autobackup/BackupLog")),
+  },
+  {
     to: "/metas/add",
     component: lazy(() => import("./metas/AddOrEdit")),
   },

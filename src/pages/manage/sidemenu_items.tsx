@@ -22,6 +22,8 @@ import { IoCopy, IoHome, IoMagnetOutline } from "solid-icons/io"
 import { Component, lazy } from "solid-js"
 import { Group, UserRole } from "~/types"
 import { FaSolidBook, FaSolidDatabase } from "solid-icons/fa"
+import { TbArchive } from "solid-icons/tb"
+import { BiRegularExtension } from "solid-icons/bi"
 
 export type SideMenuItem = SideMenuItemProps & {
   component?: Component
@@ -146,6 +148,20 @@ export const side_menu_items: SideMenuItem[] = [
     to: "/@manage/users",
     component: lazy(() => import("./users/Users")),
   },
+  {
+    title: "manage.sidemenu.extensions",
+    icon: BiRegularExtension,
+    to: "/@manage/extensions",
+    children: [
+      {
+        title: "manage.sidemenu.auto_backup",
+        icon: BsCloudUploadFill,
+        to: "/@manage/extensions/auto_backup",
+        component: lazy(() => import("./extensions/autobackup/AutoBackup")),
+      },
+    ],
+  },
+
   {
     title: "manage.sidemenu.storages",
     icon: CgDatabase,
