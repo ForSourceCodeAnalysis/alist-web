@@ -128,7 +128,7 @@ const AddOrEdit = () => {
               </SelectListbox>
             </SelectContent>
           </Select>
-          <FormHelperText>{t("backup.mode_tips")}</FormHelperText>
+          <FormHelperText>{t("auto_backup.mode_tips")}</FormHelperText>
         </FormControl>
         <Show when={backup.mode === MODE.CRON}>
           <FormControl
@@ -138,11 +138,11 @@ const AddOrEdit = () => {
             invalid={!isCronValid()}
           >
             <FormLabel for="cron" display="flex" alignItems="center">
-              {t(`auto_backup.cron`)}
+              {t(`auto_backup.cron_expression`)}
             </FormLabel>
             <Input
               id="cron"
-              value={backup.cron}
+              value={backup.cron == "" ? "0 * * * *" : backup.cron}
               onInput={(e) => {
                 const v = e.currentTarget.value.trim()
                 setBackup("cron", v)
@@ -158,7 +158,9 @@ const AddOrEdit = () => {
               </FormHelperText>
             )}
 
-            <FormHelperText>{t("auto_backup.cron_tips")}</FormHelperText>
+            <FormHelperText>
+              <div innerHTML={t("auto_backup.cron_tips")} />
+            </FormHelperText>
           </FormControl>
         </Show>
 
@@ -173,8 +175,11 @@ const AddOrEdit = () => {
             fontSize="$sm"
             checked={backup.init_upload}
           >
-            {t(`backup.init_upload`)}
+            {t(`auto_backup.init_upload`)}
           </Checkbox>
+          <FormHelperText color="$neutral10">
+            {t(`auto_backup.init_upload_tips`)}
+          </FormHelperText>
         </FormControl>
 
         <FormControl w="fit-content" display="flex">
@@ -188,7 +193,7 @@ const AddOrEdit = () => {
             fontSize="$sm"
             checked={backup.disabled}
           >
-            {t(`backup.disabled`)}
+            {t(`auto_backup.disabled`)}
           </Checkbox>
         </FormControl>
 
