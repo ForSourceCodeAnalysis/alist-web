@@ -17,14 +17,14 @@ import { MaybeLoading } from "~/components"
 import { createSignal, For } from "solid-js"
 const BackupLog = () => {
   const t = useT()
-  useManageTitle("auto_backup.log")
+  useManageTitle("auto_backup.file_list")
   const { params } = useRouter()
   const { id } = params
   const [logs, setLogs] = createSignal<AutoBackupLog[]>([])
   const [loading, getLogs] = useFetch(
     (): PPageResp<AutoBackupLog> =>
       r.get(
-        `/admin/backup/last-backup/${id}?page=${currentPage()}&page_size=${pageSize()}`,
+        `/admin/backup/files/${id}?page=${currentPage()}&page_size=${pageSize()}`,
       ),
   )
 

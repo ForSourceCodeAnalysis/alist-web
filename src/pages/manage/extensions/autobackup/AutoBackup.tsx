@@ -96,10 +96,10 @@ const Backup = () => {
                       </Button>
                       <Button
                         onClick={() => {
-                          to(`/@manage/backup/last-backup/${b.id}`)
+                          to(`/@manage/backup/files/${b.id}`)
                         }}
                       >
-                        {t("auto_backup.log")}
+                        {t("auto_backup.file_list")}
                       </Button>
 
                       <DeletePopover
