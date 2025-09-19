@@ -359,6 +359,17 @@
     "root_folder_id": "Root folder id",
     "user_name": "User name"
   },
+  "Chunk": {
+    "custom_ext": "Custom ext",
+    "part_size": "Part size",
+    "part_size-tips": "bytes",
+    "remote_path": "Remote path",
+    "show_hidden": "Show hidden",
+    "show_hidden-tips": "show hidden directories and files",
+    "store_hash": "Store hash",
+    "thumbnail": "Thumbnail",
+    "thumbnail-tips": "enable thumbnail which pre-generated under .thumbnails folder"
+  },
   "Cloudreve": {
     "address": "Address",
     "cookie": "Cookie",
@@ -1263,6 +1274,7 @@
     "BaiduPhoto": {},
     "CNB Releases": {},
     "ChaoXingGroupDrive": {},
+    "Chunk": {},
     "Cloudreve": {},
     "Cloudreve V4": {},
     "Crypt": {},
@@ -1347,6 +1359,7 @@
     "BaiduPhoto": "BaiduPhoto",
     "CNB Releases": "CNB Releases",
     "ChaoXingGroupDrive": "ChaoXingGroupDrive",
+    "Chunk": "Chunk",
     "Cloudreve": "Cloudreve",
     "Cloudreve V4": "Cloudreve V4",
     "Crypt": "Crypt",
