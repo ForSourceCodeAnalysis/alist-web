@@ -13,7 +13,7 @@ let announcementShown = false
 const Index = () => {
   useTitle(getSetting("site_title"))
   const announcement = getSetting("announcement")
-  
+
   onMount(() => {
     if (announcement && !announcementShown) {
       notify.render(() => <Markdown children={announcement} />)
