@@ -859,6 +859,16 @@
       "download": "Download",
       "streaming": "Streaming"
     },
+    "order_by": "Order by",
+    "order_bys": {
+      "file_name": "File name",
+      "updated_at": "Updated at"
+    },
+    "order_direction": "Order direction",
+    "order_directions": {
+      "asc": "Asc",
+      "desc": "Desc"
+    },
     "query_token": "Query token",
     "query_token-tips": "don't edit'",
     "refresh_token": "Refresh token",
@@ -1154,6 +1164,16 @@
     "link_methods": {
       "download": "Download",
       "streaming": "Streaming"
+    },
+    "order_by": "Order by",
+    "order_bys": {
+      "file_name": "File name",
+      "updated_at": "Updated at"
+    },
+    "order_direction": "Order direction",
+    "order_directions": {
+      "asc": "Asc",
+      "desc": "Desc"
     },
     "query_token": "Query token",
     "query_token-tips": "don't edit'",
