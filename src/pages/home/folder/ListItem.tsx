@@ -14,6 +14,7 @@ import { usePath, useRouter, useUtil } from "~/hooks"
 import {
   checkboxOpen,
   getMainColor,
+  getSettingBool,
   local,
   OrderBy,
   selectIndex,
@@ -173,24 +174,37 @@ export const ListItem = (props: { obj: StoreObj; index: number }) => {
           }
           when={showDiskUsage(props.obj.mount_details)}
         >
-          <Progress
-            w={cols[1].w}
-            class="disk-usage-percentage"
-            trackColor="$info3"
-            rounded="$full"
-            size="md"
-            value={usedPercentage(props.obj.mount_details!)}
+          <Show
+            fallback={
+              <Text
+                class="size"
+                w={cols[1].w}
+                textAlign={cols[1].textAlign as any}
+              >
+                {toReadableUsage(props.obj.mount_details!)}
+              </Text>
+            }
+            when={!getSettingBool("show_disk_usage_in_plain_text")}
           >
-            <ProgressIndicator
-              color={
-                nearlyFull(props.obj.mount_details!) ? "$danger6" : "$info6"
-              }
-              rounded="$md"
-            />
-            <ProgressLabel class="disk-usage-text">
-              {toReadableUsage(props.obj.mount_details!)}
-            </ProgressLabel>
-          </Progress>
+            <Progress
+              w={cols[1].w}
+              class="disk-usage-percentage"
+              trackColor="$info3"
+              rounded="$full"
+              size="md"
+              value={usedPercentage(props.obj.mount_details!)}
+            >
+              <ProgressIndicator
+                color={
+                  nearlyFull(props.obj.mount_details!) ? "$danger6" : "$info6"
+                }
+                rounded="$md"
+              />
+              <ProgressLabel class="disk-usage-text">
+                {toReadableUsage(props.obj.mount_details!)}
+              </ProgressLabel>
+            </Progress>
+          </Show>
         </Show>
         <Text
           class="modified"

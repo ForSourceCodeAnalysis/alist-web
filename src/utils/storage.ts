@@ -13,7 +13,7 @@ export const showDiskUsage = (details: MountDetails | undefined) => {
 export const toReadableUsage = (details: MountDetails) => {
   let total = details.total_space!
   let used = total - details.free_space!
-  const units = ["B", "KiB", "MiB", "GiB", "TiB", "PiB"]
+  const units = ["B", "K", "M", "G", "T", "P", "E"]
   const k = 1024
   let unit_i = 0
   while (unit_i < units.length - 1 && (used >= k || total >= k)) {
