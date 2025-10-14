@@ -15,7 +15,7 @@ import {
 } from "@hope-ui/solid"
 import { createSignal, For, Show } from "solid-js"
 import { usePath, useRouter, useT } from "~/hooks"
-import { getMainColor } from "~/store"
+import { getMainColor, uploadConfig, setUploadConfig } from "~/store"
 import {
   RiDocumentFolderUploadFill,
   RiDocumentFileUploadFill,
@@ -299,9 +299,9 @@ const Upload = () => {
               direction={{ "@initial": "column", "@md": "row" }}
             >
               <Checkbox
-                checked={asTask()}
+                checked={uploadConfig.asTask}
                 onChange={() => {
-                  setAsTask(!asTask())
+                  setUploadConfig({ asTask: !uploadConfig.asTask })
                 }}
               >
                 {t("home.upload.add_as_task")}
@@ -318,15 +318,15 @@ const Upload = () => {
               <Checkbox
                 checked={overwrite()}
                 onChange={() => {
-                  setOverwrite(!overwrite())
+                  setUploadConfig({ overwrite: !uploadConfig.overwrite })
                 }}
               >
                 {t("home.conflict_policy.overwrite_existing")}
               </Checkbox>
               <Checkbox
-                checked={rapid()}
+                checked={uploadConfig.rapid}
                 onChange={() => {
-                  setRapid(!rapid())
+                  setUploadConfig({ rapid: !uploadConfig.rapid })
                 }}
               >
                 {t("home.upload.try_rapid")}
