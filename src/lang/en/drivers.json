@@ -855,6 +855,15 @@
     "share_pwd": "Share pwd",
     "use_transcoding_address": "Use transcoding address"
   },
+  "ProtonDrive": {
+    "chunk_size": "Chunk size",
+    "email": "Email",
+    "password": "Password",
+    "root_folder_id": "Root folder id",
+    "two_fa_code": "Two fa code",
+    "use_reusable_login": "Use reusable login",
+    "use_reusable_login-tips": "Use reusable login credentials instead of username/password"
+  },
   "Quark": {
     "cookie": "Cookie",
     "only_list_video_file": "Only list video file",
@@ -1379,6 +1388,7 @@
     "OpenListShare": {},
     "PikPak": {},
     "PikPakShare": {},
+    "ProtonDrive": {},
     "Quark": {},
     "QuarkOpen": {},
     "QuarkTV": {},
@@ -1464,6 +1474,7 @@
     "OpenListShare": "OpenListShare",
     "PikPak": "PikPak",
     "PikPakShare": "PikPakShare",
+    "ProtonDrive": "ProtonDrive",
     "Quark": "Quark",
     "QuarkOpen": "QuarkOpen",
     "QuarkTV": "QuarkTV",
