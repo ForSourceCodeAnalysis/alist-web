@@ -1,5 +1,5 @@
 import { Box, Center } from "@hope-ui/solid"
-import { Show, createSignal, onCleanup, onMount } from "solid-js"
+import { Show, createMemo, createSignal, onCleanup, onMount } from "solid-js"
 import { useRouter, useLink, useFetch } from "~/hooks"
 import { getMainColor, getSettingBool, objStore, password } from "~/store"
 import { ObjType, PResp } from "~/types"
@@ -50,25 +50,24 @@ const Preview = () => {
   const { pathname, searchParams } = useRouter()
   const { proxyLink } = useLink()
   const navigate = useNavigate()
-  let videos = objStore.objs.filter((obj) => obj.type === ObjType.VIDEO)
-  if (videos.length === 0) {
-    videos = [objStore.obj]
-  }
+  const videos = createMemo(() =>
+    objStore.objs.filter((obj) => obj.type === ObjType.VIDEO),
+  )
   const next_video = () => {
-    const index = videos.findIndex((f) => f.name === objStore.obj.name)
-    if (index < videos.length - 1) {
+    const index = videos().findIndex((f) => f.name === objStore.obj.name)
+    if (index < videos().length - 1) {
       navigate(
-        pathJoin(pathDir(location.pathname), videos[index + 1].name) +
+        pathJoin(pathDir(location.pathname), videos()[index + 1].name) +
           "?auto_fullscreen=" +
           player.fullscreen,
       )
     }
   }
   const previous_video = () => {
-    const index = videos.findIndex((f) => f.name === objStore.obj.name)
+    const index = videos().findIndex((f) => f.name === objStore.obj.name)
     if (index > 0) {
       navigate(
-        pathJoin(pathDir(location.pathname), videos[index - 1].name) +
+        pathJoin(pathDir(location.pathname), videos()[index - 1].name) +
           "?auto_fullscreen=" +
           player.fullscreen,
       )

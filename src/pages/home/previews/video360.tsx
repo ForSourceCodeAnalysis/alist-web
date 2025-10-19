@@ -8,11 +8,6 @@ import "@egjs/view360/css/view360.min.css"
 import "./video360.css"
 
 const Preview = () => {
-  let videos = objStore.objs.filter((obj) => obj.type === ObjType.VIDEO)
-  if (videos.length === 0) {
-    videos = [objStore.obj]
-  }
-
   let viewer: View360
 
   onMount(() => {
