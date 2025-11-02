@@ -256,7 +256,11 @@ export const BatchRename = () => {
             </Button>
             <Button
               onClick={() => submit()}
-              disabled={type() === "2" || type() === "3" ? !srcName() || !newName() : !srcName()}
+              disabled={
+                type() === "2" || type() === "3"
+                  ? !srcName() || !newName()
+                  : !srcName()
+              }
             >
               {t("global.ok")}
             </Button>
