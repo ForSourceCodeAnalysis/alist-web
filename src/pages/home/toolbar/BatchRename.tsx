@@ -145,7 +145,7 @@ export const BatchRename = () => {
         const renameObj: RenameObj = {
           id: obj.id,
           src_name: obj.name,
-          new_name: srcName() + tempNum + (suffix == "" ? "" : "." + suffix),
+          new_name: srcName() + tempNum + "." + suffix,
         }
         tempNum = (parseInt(tempNum) + 1)
           .toString()
