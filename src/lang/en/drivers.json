@@ -85,6 +85,8 @@
     "UploadThread": "UploadThread",
     "UploadThread-tips": "the threads of upload",
     "password": "Password",
+    "platform": "Platform",
+    "platform-tips": "the platform header value, sent with API requests",
     "root_folder_id": "Root folder id",
     "username": "Username"
   },
@@ -979,17 +981,21 @@
     "username": "Username"
   },
   "Strm": {
+    "SaveStrmLocalPath": "SaveStrmLocalPath",
+    "SaveStrmLocalPath-tips": "save strm file local path",
+    "SaveStrmToLocal": "SaveStrmToLocal",
+    "SaveStrmToLocal-tips": "save strm file locally",
     "downloadFileTypes": "DownloadFileTypes",
     "downloadFileTypes-tips": "Files need to download with strm (usally subtitles)",
     "encodePath": "EncodePath",
     "encodePath-tips": "encode the path in the strm file",
     "filterFileTypes": "FilterFileTypes",
     "filterFileTypes-tips": "Supports suffix name of strm file",
-    "localModel": "LocalModel",
-    "localModel-tips": "enable local mode",
     "paths": "Paths",
     "siteUrl": "SiteUrl",
-    "siteUrl-tips": "The prefix URL of the strm file"
+    "siteUrl-tips": "The prefix URL of the strm file",
+    "withoutUrl": "WithoutUrl",
+    "withoutUrl-tips": "strm file content without URL prefix"
   },
   "Teambition": {
     "cookie": "Cookie",
@@ -1053,6 +1059,8 @@
     "device_id": "Device id",
     "password": "Password",
     "root_folder_id": "Root folder id",
+    "space": "Space",
+    "space-tips": "device id for remote device",
     "username": "Username"
   },
   "ThunderBrowser": {
@@ -1147,6 +1155,8 @@
       "algorithms": "Algorithms",
       "captcha_sign": "Captcha sign"
     },
+    "space": "Space",
+    "space-tips": "device id for remote device",
     "timestamp": "Timestamp",
     "timestamp-tips": "sign type is captcha_sign,this is required",
     "use_video_url": "Use video url",
