@@ -75,7 +75,11 @@ const PPTViewerApp = () => {
 
       // 按顺序加载JS文件
       await loadScript(`${baseUrl}/js/jquery-1.11.3.min.js`, "jquery-script")
-      await loadScript(`${baseUrl}/js/jszip.min.js`, "jszip-script")
+      // 使用JSZip 3.x版本，与docx预览器保持一致
+      await loadScript(
+        "https://unpkg.com/jszip@2.6.1/dist/jszip.min.js",
+        "jszip-script",
+      )
       await loadScript(`${baseUrl}/js/filereader.js`, "filereader-script")
       await loadScript(`${baseUrl}/js/d3.min.js`, "d3-script")
       await loadScript(`${baseUrl}/js/nv.d3.min.js`, "nv-d3-script")
