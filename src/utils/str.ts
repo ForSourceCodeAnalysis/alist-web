@@ -177,7 +177,6 @@ export const matchTemplate = (
   return template(data)
 }
 
-
 export const validateFilename = (
   name: string,
 ): { valid: boolean; error?: string } => {
