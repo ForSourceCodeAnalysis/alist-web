@@ -107,6 +107,8 @@ const Upload = () => {
   const setUpload = (path: string, key: keyof UploadFileProps, value: any) => {
     setUploadFiles("uploads", (upload) => upload.path === path, key, value)
   }
+
+  // All upload methods are available by default
   const uploaders = getUploads()
   const [curUploader, setCurUploader] = createSignal(uploaders[0])
   const handleFile = async (file: File) => {
@@ -248,7 +250,7 @@ const Upload = () => {
             </Heading>
             <Box w={{ "@initial": "80%", "@md": "30%" }}>
               <SelectWrapper
-                value={curUploader().name}
+                value={curUploader()?.name}
                 onChange={(name) => {
                   setCurUploader(
                     uploaders.find((uploader) => uploader.name === name)!,

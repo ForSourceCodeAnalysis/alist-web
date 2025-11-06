@@ -66,6 +66,6 @@ export const FormUpload: Upload = async (
   if (resp.code === 200) {
     return
   } else {
-    return new Error(resp.message)
+    throw new Error(resp.message)
   }
 }
