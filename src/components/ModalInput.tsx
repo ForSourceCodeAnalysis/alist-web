@@ -33,6 +33,7 @@ export type ModalInputProps = {
   bottomSlot?: JSXElement
   footerSlot?: JSXElement
   onDrop?: (e: DragEvent, setValue: (value: string) => void) => void
+  validateFilename?: boolean
 }
 export const ModalInput = (props: ModalInputProps) => {
   const [value, setValue] = createSignal(props.defaultValue ?? "")
@@ -78,18 +79,29 @@ export const ModalInput = (props: ModalInputProps) => {
   })
 
   const submit = () => {
-    const validation = validateFilename(value())
-    if (!validation.valid) {
-      notify.warning(t(`global.${validation.error}`))
-      return
+    if (props.validateFilename) {
+      const validation = validateFilename(value())
+      if (!validation.valid) {
+        notify.warning(t(`global.${validation.error}`))
+        return
+      }
+    } else {
+      if (!value() || value().trim().length === 0) {
+        notify.warning(t("global.empty_input"))
+        return
+      }
     }
     props.onSubmit?.(value())
   }
 
   const handleInput = (newValue: string) => {
     setValue(newValue)
-    const validation = validateFilename(newValue)
-    setValidationError(validation.valid ? "" : validation.error || "")
+    if (props.validateFilename) {
+      const validation = validateFilename(newValue)
+      setValidationError(validation.valid ? "" : validation.error || "")
+    } else {
+      setValidationError("")
+    }
   }
 
   return (

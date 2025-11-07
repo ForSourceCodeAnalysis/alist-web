@@ -25,6 +25,7 @@ export type ModalTwoInputProps = {
   loading?: boolean
   tips?: string
   topSlot?: JSXElement
+  validateFilename?: boolean
 }
 export const ModalTwoInput = (props: ModalTwoInputProps) => {
   const [value1, setValue1] = createSignal(props.defaultValue1 ?? "") // Update value and setValue to value1 and setValue1
@@ -35,27 +36,42 @@ export const ModalTwoInput = (props: ModalTwoInputProps) => {
 
   const handleInput1 = (newValue: string) => {
     setValue1(newValue)
-    const validation = validateFilename(newValue)
-    setValidationError1(validation.valid ? "" : validation.error || "")
+    if (props.validateFilename) {
+      const validation = validateFilename(newValue)
+      setValidationError1(validation.valid ? "" : validation.error || "")
+    } else {
+      setValidationError1("")
+    }
   }
 
   const handleInput2 = (newValue: string) => {
     setValue2(newValue)
-    const validation = validateFilename(newValue)
-    setValidationError2(validation.valid ? "" : validation.error || "")
+    if (props.validateFilename) {
+      const validation = validateFilename(newValue)
+      setValidationError2(validation.valid ? "" : validation.error || "")
+    } else {
+      setValidationError2("")
+    }
   }
 
   const submit = () => {
-    const validation1 = validateFilename(value1())
-    const validation2 = validateFilename(value2())
+    if (props.validateFilename) {
+      const validation1 = validateFilename(value1())
+      const validation2 = validateFilename(value2())
 
-    if (!validation1.valid) {
-      notify.warning(t(`global.${validation1.error}`))
-      return
-    }
-    if (!validation2.valid) {
-      notify.warning(t(`global.${validation2.error}`))
-      return
+      if (!validation1.valid) {
+        notify.warning(t(`global.${validation1.error}`))
+        return
+      }
+      if (!validation2.valid) {
+        notify.warning(t(`global.${validation2.error}`))
+        return
+      }
+    } else {
+      if (!value1() || !value2()) {
+        notify.warning(t("global.empty_input"))
+        return
+      }
     }
     props.onSubmit?.(value1(), value2()) // Update onSubmit to pass both input values
   }
