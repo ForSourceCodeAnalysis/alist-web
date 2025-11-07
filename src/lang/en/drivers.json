@@ -808,6 +808,8 @@
     "custom_host-tips": "Custom host for onedrive download link",
     "disable_disk_usage": "Disable disk usage",
     "email": "Email",
+    "enable_direct_upload": "Enable direct upload",
+    "enable_direct_upload-tips": "Enable direct upload from client to OneDrive",
     "region": "Region",
     "regions": {
       "cn": "Cn",
