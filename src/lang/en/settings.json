@@ -40,6 +40,8 @@
   "ignore_direct_link_params": "Ignore direct link params",
   "ignore_paths": "Ignore paths",
   "ignore_paths-tips": "one path per line",
+  "ignore_system_files": "Ignore system files",
+  "ignore_system_files-tips": "When enabled, ignores common system files during upload (.DS_Store, desktop.ini, Thumbs.db, and files starting with ._)",
   "image_types": "Image types",
   "index_progress": "Index progress",
   "ldap_default_dir": "Ldap default dir",
