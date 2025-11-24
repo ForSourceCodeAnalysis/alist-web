@@ -195,6 +195,7 @@
   "conflict_policy": {
     "cancel_if_exists": "Cancel if file exists",
     "overwrite_existing": "Overwrite existing files",
-    "skip_existing": "Skip existing files"
+    "skip_existing": "Skip existing files",
+    "merge": "Only Copy new files and subdirectories"
   }
 }
