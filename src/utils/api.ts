@@ -206,6 +206,7 @@ export const fsArchiveDecompress = (
   inner_path = "/",
   cache_full = true,
   put_into_new_dir = false,
+  overwrite = false,
 ): PEmptyResp => {
   return r.post("/fs/archive/decompress", {
     src_dir,
@@ -215,6 +216,7 @@ export const fsArchiveDecompress = (
     inner_path,
     cache_full,
     put_into_new_dir,
+    overwrite,
   })
 }
 
