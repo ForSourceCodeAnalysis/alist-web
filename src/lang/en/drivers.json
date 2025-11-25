@@ -997,6 +997,8 @@
     "username": "Username"
   },
   "Strm": {
+    "KeepLocalDownloadFile": "KeepLocalDownloadFile",
+    "KeepLocalDownloadFile-tips": "keep local download files",
     "PathPrefix": "PathPrefix",
     "PathPrefix-tips": "Path prefix",
     "SaveStrmLocalPath": "SaveStrmLocalPath",
