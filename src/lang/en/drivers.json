@@ -705,7 +705,7 @@
   "MediaFire": {
     "chunk_size": "Chunk size",
     "cookie": "Cookie",
-    "cookie-tips": "Required for navigation",
+    "cookie-tips": "Required for MediaFire API authentication",
     "limit_rate": "Limit rate",
     "limit_rate-tips": "limit all api request rate ([limit]r/1s)",
     "order_by": "Order by",
@@ -721,7 +721,7 @@
     },
     "root_folder_path": "Root folder path",
     "session_token": "Session token",
-    "session_token-tips": "Required for MediaFire API",
+    "session_token-tips": "Optional for MediaFire API, can be auto-acquired from cookie",
     "upload_threads": "Upload threads",
     "upload_threads-tips": "concurrent upload threads"
   },
