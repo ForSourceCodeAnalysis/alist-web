@@ -299,6 +299,7 @@
     "container_name-tips": "The name of the container in Azure Storage (created in the Azure portal). https://learn.microsoft.com/azure/storage/blobs/blob-containers-portal",
     "endpoint": "Endpoint",
     "endpoint-tips": "e.g. https://accountname.blob.core.windows.net/. The full endpoint URL for Azure Storage, including the unique storage account name (3 ~ 24 numbers and lowercase letters only).",
+    "root_folder_path": "Root folder path",
     "sign_url_expire": "Sign url expire",
     "sign_url_expire-tips": "The expiration time for SAS URLs, in hours."
   },
@@ -356,7 +357,7 @@
     "default_branch": "Default branch",
     "default_branch-tips": "Default branch for new releases",
     "repo": "Repo",
-    "root_folder_path": "Root folder path",
+    "root_folder_id": "Root folder id",
     "token": "Token",
     "use_tag_name": "Use tag name",
     "use_tag_name-tips": "Use tag name instead of release name"
@@ -574,7 +575,7 @@
     "gh_proxy-tips": "GitHub proxy, e.g. https://ghproxy.net/github.com or https://gh-proxy.com/github.com ",
     "repo_structure": "Repo structure",
     "repo_structure-tips": "structure:[path:]org/repo",
-    "root_folder_id": "Root folder id",
+    "root_folder_path": "Root folder path",
     "show_all_version": "Show all version",
     "show_all_version-tips": "show all versions",
     "show_readme": "Show readme",
