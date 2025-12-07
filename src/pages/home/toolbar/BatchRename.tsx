@@ -40,6 +40,7 @@ export const BatchRename = () => {
   const [type, setType] = createSignal("1")
   const [srcName, setSrcName] = createSignal("")
   const [newName, setNewName] = createSignal("")
+  const [paddingZeros, setPaddingZeros] = createSignal("")
   const [newNameType, setNewNameType] = createSignal("string")
   const [matchNames, setMatchNames] = createSignal<RenameObj[]>([])
   const [validationErrorSrc, setValidationErrorSrc] = createSignal<string>("")
@@ -170,17 +171,27 @@ export const BatchRename = () => {
         })
     } else if (type() === "2") {
       let tempNum = newName()
+      const hasNumberPlaceholder = srcName().includes("{number}")
+      const paddingLength = parseInt(paddingZeros()) || 0
+
       matchNames = selectedObjs().map((obj) => {
-        let suffix = ""
         const lastDotIndex = obj.name.lastIndexOf(".")
-        if (lastDotIndex !== -1) {
-          suffix = obj.name.substring(lastDotIndex + 1)
+        const suffix =
+          lastDotIndex !== -1 ? obj.name.substring(lastDotIndex) : ""
+        const paddedNum =
+          paddingLength > 0 ? tempNum.padStart(paddingLength, "0") : tempNum
+
+        let newFileName: string
+        if (hasNumberPlaceholder) {
+          newFileName = srcName().replace("{number}", paddedNum) + suffix
+        } else {
+          newFileName = srcName() + paddedNum + suffix
         }
 
         const renameObj: RenameObj = {
           id: obj.id,
           src_name: obj.name,
-          new_name: srcName() + tempNum + "." + suffix,
+          new_name: newFileName,
         }
         tempNum = (parseInt(tempNum) + 1)
           .toString()
@@ -283,6 +294,26 @@ export const BatchRename = () => {
                   }
                 }}
               />
+              <Show when={type() === "2"}>
+                <Input
+                  id="modal-input3"
+                  type="number"
+                  min="0"
+                  step="1"
+                  placeholder={t(
+                    "home.toolbar.sequential_renaming_input3_placeholder",
+                  )}
+                  value={paddingZeros()}
+                  onInput={(e) => {
+                    setPaddingZeros(e.currentTarget.value)
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      submit()
+                    }
+                  }}
+                />
+              </Show>
               <Show when={validationErrorNew()}>
                 <Text color="$danger9" fontSize="$sm">
                   {t(`global.${validationErrorNew()}`)}
@@ -295,6 +326,7 @@ export const BatchRename = () => {
               onClick={() => {
                 setType("1")
                 setNewNameType("string")
+                setPaddingZeros("")
                 setValidationErrorSrc("")
                 setValidationErrorNew("")
                 onClose()
@@ -351,6 +383,7 @@ export const BatchRename = () => {
                 setMatchNames([])
                 setType("1")
                 setNewNameType("string")
+                setPaddingZeros("")
                 setValidationErrorSrc("")
                 setValidationErrorNew("")
                 closePreviewModal()
@@ -378,6 +411,7 @@ export const BatchRename = () => {
                   setMatchNames([])
                   setSrcName("")
                   setNewName("")
+                  setPaddingZeros("")
                   setType("1")
                   setNewNameType("string")
                   setValidationErrorSrc("")
