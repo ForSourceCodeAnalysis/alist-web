@@ -196,6 +196,17 @@
     "upload_thread": "Upload thread",
     "upload_thread-tips": "1\u003c=thread\u003c=32"
   },
+  "AList V3": {
+    "forward_archive_requests": "Forward archive requests",
+    "meta_password": "Meta password",
+    "pass_ip_to_upsteam": "Pass ip to upsteam",
+    "pass_ua_to_upsteam": "Pass ua to upsteam",
+    "password": "Password",
+    "root_folder_path": "Root folder path",
+    "token": "Token",
+    "url": "Url",
+    "username": "Username"
+  },
   "Alias": {
     "details_pass_through": "Details pass through",
     "download_concurrency": "Download concurrency",
@@ -1370,6 +1381,7 @@
     },
     "189CloudPC": {},
     "189CloudTV": {},
+    "AList V3": {},
     "Alias": {},
     "Aliyundrive": {
       "alert": "There may be an infinite loop bug in this driver.\nDeprecated, no longer maintained and will be removed in a future version.\nWe recommend using the official driver AliyundriveOpen."
@@ -1460,6 +1472,7 @@
     "189Cloud": "189Cloud",
     "189CloudPC": "189CloudPC",
     "189CloudTV": "189CloudTV",
+    "AList V3": "AList V3",
     "Alias": "Alias",
     "Aliyundrive": "Aliyundrive",
     "AliyundriveOpen": "AliyundriveOpen",
