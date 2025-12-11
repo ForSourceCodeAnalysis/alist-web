@@ -105,7 +105,7 @@ const Upload = () => {
     for await (const ms of asyncPool(3, files, handleFile)) {
       console.log(ms)
     }
-    refresh(undefined, true)
+    refresh()
   }
   const setUpload = (path: string, key: keyof UploadFileProps, value: any) => {
     setUploadFiles("uploads", (upload) => upload.path === path, key, value)
