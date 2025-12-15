@@ -53,6 +53,7 @@
   "ldap_manager_dn": "Ldap manager dn",
   "ldap_manager_password": "Ldap manager password",
   "ldap_server": "Ldap server",
+  "ldap_skip_tls_verify": "Insecure skip TLS verify",
   "ldap_user_search_base": "Ldap user search base",
   "ldap_user_search_filter": "Ldap user search filter",
   "link_expiration": "Link expiration",
