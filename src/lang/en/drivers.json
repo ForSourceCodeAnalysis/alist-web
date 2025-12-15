@@ -109,6 +109,9 @@
     "cloud_id": "Cloud id",
     "custom_upload_part_size": "Custom upload part size",
     "custom_upload_part_size-tips": "0 for auto",
+    "mail_cookies": "Mail cookies",
+    "mail_cookies-tips": "Cookies from mail.139.com used for login authentication.",
+    "password": "Password",
     "report_real_size": "Report real size",
     "report_real_size-tips": "Enable to report the real file size during upload",
     "root_folder_id": "Root folder id",
@@ -122,7 +125,8 @@
     "use_large_thumbnail": "Use large thumbnail",
     "use_large_thumbnail-tips": "Enable to use large thumbnail for images",
     "user_domain_id": "User domain id",
-    "user_domain_id-tips": "ud_id in Cookie, fill in to show disk usage"
+    "user_domain_id-tips": "ud_id in Cookie, fill in to show disk usage",
+    "username": "Username"
   },
   "189Cloud": {
     "cookie": "Cookie",
