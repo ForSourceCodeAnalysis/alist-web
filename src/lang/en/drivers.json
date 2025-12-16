@@ -1305,6 +1305,15 @@
     "num_folder": "Num folder",
     "root_folder_path": "Root folder path"
   },
+  "WPS": {
+    "cookie": "Cookie",
+    "mode": "Mode",
+    "modes": {
+      "Business": "Business",
+      "Personal": "Personal"
+    },
+    "root_folder_path": "Root folder path"
+  },
   "WebDav": {
     "address": "Address",
     "password": "Password",
@@ -1459,6 +1468,7 @@
     "USS": {},
     "UrlTree": {},
     "Virtual": {},
+    "WPS": {},
     "WebDav": {},
     "WeiYun": {},
     "WoPan": {},
@@ -1546,6 +1556,7 @@
     "USS": "USS",
     "UrlTree": "UrlTree",
     "Virtual": "Virtual",
+    "WPS": "WPS",
     "WebDav": "WebDav",
     "WeiYun": "WeiYun",
     "WoPan": "WoPan",
