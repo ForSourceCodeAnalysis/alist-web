@@ -37,6 +37,8 @@
       "asc": "Asc",
       "desc": "Desc"
     },
+    "page_size": "Page size",
+    "page_size-tips": "list api per page size of 115open driver",
     "refresh_token": "Refresh token",
     "root_folder_id": "Root folder id"
   },
@@ -1030,6 +1032,7 @@
     "paths": "Paths",
     "siteUrl": "SiteUrl",
     "siteUrl-tips": "The prefix URL of the strm file",
+    "withSign": "WithSign",
     "withoutUrl": "WithoutUrl",
     "withoutUrl-tips": "strm file content without URL prefix"
   },
