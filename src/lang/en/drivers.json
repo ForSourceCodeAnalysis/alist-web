@@ -1019,6 +1019,13 @@
     "KeepLocalDownloadFile-tips": "keep local download files",
     "PathPrefix": "PathPrefix",
     "PathPrefix-tips": "Path prefix",
+    "SaveLocalMode": "SaveLocalMode",
+    "SaveLocalMode-tips": "save strm file locally mode",
+    "SaveLocalModes": {
+      "insert": "Insert",
+      "sync": "Sync",
+      "update": "Update"
+    },
     "SaveStrmLocalPath": "SaveStrmLocalPath",
     "SaveStrmLocalPath-tips": "save strm file local path",
     "SaveStrmToLocal": "SaveStrmToLocal",
