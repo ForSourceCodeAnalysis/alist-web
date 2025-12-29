@@ -219,12 +219,38 @@
     "download_concurrency-tips": "Need to enable proxy",
     "download_part_size": "Download part size",
     "download_part_size-tips": "Need to enable proxy. Unit: KB",
-    "parallel_write": "Parallel write",
+    "file_consistency_check": "File consistency check",
     "paths": "Paths",
-    "protect_same_name": "Protect same name",
-    "protect_same_name-tips": "Protects same-name files from Delete or Rename",
     "provider_pass_through": "Provider pass through",
-    "writable": "Writable"
+    "put_conflict_policy": "Putting conflict policy",
+    "put_conflict_policy-tips": "How the driver handles identical backend paths when uploading, copying, moving, or decompressing.",
+    "put_conflict_policys": {
+      "all": "Put into all conflict paths",
+      "all_strict": "Allow full conflict paths",
+      "deterministic": "Allow unique path",
+      "deterministic_or_all": "Allow unique path and full conflict paths",
+      "disabled": "Disable putting",
+      "first": "Put into the first conflict path",
+      "random": "Random load balancing",
+      "quota": "Weighted random load balancing based on remaining space",
+      "quota_strict": "Strict weighted random load balancing based on remaining space"
+    },
+    "read_conflict_policy": "Reading conflict policy",
+    "read_conflict_policys": {
+      "first": "Get the file corresponding to the first conflict path",
+      "random": "Load balancing on a per-file basis",
+      "all": "Load balancing on a per-part basis"
+    },
+    "write_conflict_policy": "Writing conflict policy",
+    "write_conflict_policy-tips": "How the driver handles identical backend paths when renaming, removing, or making directories.",
+    "write_conflict_policys": {
+      "all": "Write into all conflict paths",
+      "all_strict": "Allow full conflict paths",
+      "deterministic": "Allow unique path",
+      "deterministic_or_all": "Allow unique path and full conflict paths",
+      "disabled": "Disable writing",
+      "first": "Write into the first conflict path"
+    }
   },
   "Aliyundrive": {
     "internal_upload": "Internal upload",
