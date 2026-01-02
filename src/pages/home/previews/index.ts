@@ -216,12 +216,16 @@ export const getPreviews = (
   }
   // iframe previews
   const iframePreviews = getIframePreviews(file.name)
-  res.push(
-    ...iframePreviews.map((preview) => ({
-      name: preview.key,
-      component: generateIframePreview(preview.value),
-    })),
-  )
+  const matchedIframePreviews = iframePreviews.map((preview) => ({
+    name: preview.key,
+    component: generateIframePreview(preview.value),
+  }))
+  // Condition for iframe previews to respect the "preview_download_by_default" setting
+  if (downloadPrior) {
+    subsequent.push(...matchedIframePreviews)
+  } else {
+    res.push(...matchedIframePreviews)
+  }
 
   // download page
   const downloadComponent: PreviewComponent = {
