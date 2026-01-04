@@ -783,6 +783,8 @@
   },
   "Mega_nz": {
     "email": "Email",
+    "move_to_trash": "Move to trash",
+    "move_to_trash-tips": "move to trash when deleting files",
     "password": "Password",
     "two_fa_code": "Two fa code",
     "two_fa_code-tips": "2FA 6-digit code, filling in the 2FA code alone will not support reloading driver",
