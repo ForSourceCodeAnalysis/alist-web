@@ -57,6 +57,7 @@ export type ArchiveMeta = {
 export type MountDetails = {
   total_space?: number
   free_space?: number
+  used_space?: number
   driver_name: string
 }
 
