@@ -335,6 +335,16 @@
     "share_id": "Share id",
     "share_pwd": "Share pwd"
   },
+  "AutoIndex": {
+    "ignore_file_names": "Ignore file names",
+    "item_xpath": "Item xpath",
+    "modified_time_format": "Modified time format",
+    "modified_time_format-tips": "Must be based on the time point Mon Jan 2 15:04:05 -0700 MST 2006",
+    "modified_xpath": "Modified xpath",
+    "name_xpath": "Name xpath",
+    "size_xpath": "Size xpath",
+    "url": "Url"
+  },
   "Azure Blob Storage": {
     "access_key": "Access key",
     "access_key-tips": "The access key for Azure Storage, used for authentication. https://learn.microsoft.com/azure/storage/common/storage-account-keys-manage",
@@ -1439,6 +1449,7 @@
     },
     "AliyundriveOpen": {},
     "AliyundriveShare": {},
+    "AutoIndex": {},
     "Azure Blob Storage": {},
     "BaiduNetdisk": {},
     "BaiduPhoto": {},
@@ -1529,6 +1540,7 @@
     "Aliyundrive": "Aliyundrive",
     "AliyundriveOpen": "AliyundriveOpen",
     "AliyundriveShare": "AliyundriveShare",
+    "AutoIndex": "AutoIndex",
     "Azure Blob Storage": "Azure Blob Storage",
     "BaiduNetdisk": "BaiduNetdisk",
     "BaiduPhoto": "BaiduPhoto",
