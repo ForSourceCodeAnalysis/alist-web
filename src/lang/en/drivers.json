@@ -337,13 +337,13 @@
   },
   "AutoIndex": {
     "ignore_file_names": "Ignore file names",
-    "item_xpath": "Item xpath",
-    "modified_time_format": "Modified time format",
+    "item_xpath": "Entry XPath",
+    "modified_time_format": "Modification date format",
     "modified_time_format-tips": "Must be based on the time point Mon Jan 2 15:04:05 -0700 MST 2006",
-    "modified_xpath": "Modified xpath",
-    "name_xpath": "Name xpath",
-    "size_xpath": "Size xpath",
-    "url": "Url"
+    "modified_xpath": "Modification time XPath",
+    "name_xpath": "File name XPath",
+    "size_xpath": "File size XPath",
+    "url": "URL"
   },
   "Azure Blob Storage": {
     "access_key": "Access key",
