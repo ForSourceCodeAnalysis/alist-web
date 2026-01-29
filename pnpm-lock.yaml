@@ -21,8 +21,8 @@ importers:
         specifier: 1.7.0
         version: 1.7.0
       '@ruffle-rs/ruffle':
-        specifier: 0.2.0-nightly.2025.12.15
-        version: 0.2.0-nightly.2025.12.15
+        specifier: 0.2.0-nightly.2026.1.29
+        version: 0.2.0-nightly.2026.1.29
       '@solid-primitives/i18n':
         specifier: ^2.2.1
         version: 2.2.1(solid-js@1.9.10)
@@ -1261,8 +1261,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@ruffle-rs/ruffle@0.2.0-nightly.2025.12.15':
-    resolution: {integrity: sha512-tTMaDxf2+zFl5mxdQrN7yltFxUyEMd044ALbg+eLbJnAkDacGZP3rw/iI54JU+veDtAcMw7ZRKBnPUXZEDmM9Q==}
+  '@ruffle-rs/ruffle@0.2.0-nightly.2026.1.29':
+    resolution: {integrity: sha512-gMqg9mRM59JogrmFre1VIodkzMNmCA5dmkrXl3zWjS2EQ1gx/5GSfk5VUhHW2iSgdurAZXiAHcuaFTNsMf+ZJA==}
 
   '@solid-primitives/event-listener@2.4.3':
     resolution: {integrity: sha512-h4VqkYFv6Gf+L7SQj+Y6puigL/5DIi7x5q07VZET7AWcS+9/G3WfIE9WheniHWJs51OEkRB43w6lDys5YeFceg==}
@@ -3189,6 +3189,7 @@ packages:
   tar@7.5.5:
     resolution: {integrity: sha512-ocjwSUBo2V8ExKxy9FH6iROIsK60OCW//h14MFYpivNSYIj7ntgm35ijGT82Jl//xwbxBhIYXkfAovjtVm9nrA==}
     engines: {node: '>=18'}
+    deprecated: Old versions of tar are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exhorbitant rates) by contacting i@izs.me
 
   terser@5.44.1:
     resolution: {integrity: sha512-t/R3R/n0MSwnnazuPpPNVO60LX0SKL45pyl9YlvxIdkH0Of7D5qM2EVe+yASRIlY5pZ73nclYJfNANGWPwFDZw==}
@@ -4585,7 +4586,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.52.5':
     optional: true
 
-  '@ruffle-rs/ruffle@0.2.0-nightly.2025.12.15': {}
+  '@ruffle-rs/ruffle@0.2.0-nightly.2026.1.29': {}
 
   '@solid-primitives/event-listener@2.4.3(solid-js@1.9.10)':
     dependencies:
