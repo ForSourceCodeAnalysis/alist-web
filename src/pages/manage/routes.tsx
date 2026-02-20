@@ -31,7 +31,6 @@ const hide_routes: Route[] = [
     to: "/users/edit/:id",
     component: lazy(() => import("./users/AddOrEdit")),
   },
-
   {
     to: "/metas/add",
     component: lazy(() => import("./metas/AddOrEdit")),

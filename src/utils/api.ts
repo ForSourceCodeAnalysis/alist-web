@@ -129,7 +129,15 @@ export const fsCopy = (
 }
 
 export const fsRemove = (dir: string, names: string[]): PEmptyResp => {
-  return r.post("/fs/remove", { dir, names })
+  return r.post(
+    "/fs/remove",
+    { names },
+    {
+      headers: {
+        "File-Path": encodeURIComponent(dir),
+      },
+    },
+  )
 }
 
 export const fsRemoveEmptyDirectory = (src_dir: string): PEmptyResp => {

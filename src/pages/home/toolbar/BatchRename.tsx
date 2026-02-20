@@ -134,7 +134,6 @@ export const BatchRename = () => {
           const created = new Date(obj.created)
           const modified = new Date(obj.modified)
           const renameObj: RenameObj = {
-            id: obj.id,
             src_name: obj.name,
             new_name: obj.name
               .replace(replaceRegexp, newName())
@@ -209,7 +208,6 @@ export const BatchRename = () => {
         }
 
         const renameObj: RenameObj = {
-          id: obj.id,
           src_name: obj.name,
           new_name: newFileName,
         }
@@ -254,7 +252,7 @@ export const BatchRename = () => {
           <ModalBody>
             <RadioGroup
               defaultValue="1"
-              onChange={(event: string) => {
+              onChange={(event) => {
                 setType(event)
                 if (event === "1" || event === "3") {
                   setNewNameType("string")
