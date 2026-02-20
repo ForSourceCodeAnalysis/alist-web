@@ -129,8 +129,12 @@ export const fsCopy = (
 }
 
 export const fsRemove = (dir: string, names: string[]): PEmptyResp => {
+  return r.post("/fs/remove", { dir, names })
+}
+
+export const fsBatchRemove = (dir: string, names: string[]): PEmptyResp => {
   return r.post(
-    "/fs/remove",
+    "/fs/batch_remove",
     { names },
     {
       headers: {

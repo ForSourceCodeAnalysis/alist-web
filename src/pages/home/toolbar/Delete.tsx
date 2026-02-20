@@ -11,12 +11,12 @@ import {
 import { onCleanup } from "solid-js"
 import { useFetch, usePath, useRouter, useT } from "~/hooks"
 import { selectedObjs } from "~/store"
-import { bus, fsRemove, handleRespWithNotifySuccess } from "~/utils"
+import { bus, fsBatchRemove, handleRespWithNotifySuccess } from "~/utils"
 
 export const Delete = () => {
   const t = useT()
   const { isOpen, onOpen, onClose } = createDisclosure()
-  const [loading, ok] = useFetch(fsRemove)
+  const [loading, ok] = useFetch(fsBatchRemove)
   const { refresh } = usePath()
   const { pathname } = useRouter()
   const handler = (name: string) => {

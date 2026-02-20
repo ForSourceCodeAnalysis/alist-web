@@ -32,7 +32,6 @@ export type ArchiveObj = Obj & {
 }
 
 export type RenameObj = {
-  id: string
   src_name: string
   new_name: string
 }
